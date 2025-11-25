@@ -213,51 +213,38 @@
 
 
     <!-- Home -->
+<section id="home" class="background-dark-blue-3 full-height height-auto-lg hide-over" style="position: relative; overflow: hidden; background: #000;">
 
- <section id="home" class="background-dark-blue-3 full-height height-auto-lg hide-over" style="max-height: 900px; position: relative;">
-
-<img src="novo/img/background-thiago-finch.png"
-     alt="Background"
-     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; transform: scale(1.15); z-index: -1;">
-
+    <!-- Imagem de fundo como tag img -->
+    <img src="novo/img/background-thiago-finch.png"
+         alt="Background"
+         class="bg-img">
 
     <div class="container">
         <div class="row justify-content-center" style="position: relative">
             <div class="col-md-4">
-                <p data-entrance="from-right" data-entrance-delay="100">
+                <p class="headline" data-entrance="from-right" data-entrance-delay="100">
                     O segredo revelado para cabelos perfeitamente lisos 
                     <span class="destaque">10X</span> mais saudáveis e sem danificar os fios!
                 </p>
 
-                <ul>
-                    <li><img src="novo/img/check.svg">
-                        Alinha e doma o frizz instantaneamente
-                    </li>
+                <ul class="hero-list">
+                    <li><img src="novo/img/check.svg"> Alinha e doma o frizz instantaneamente</li>
                     <li><hr></li>
 
-                    <li><img src="novo/img/check.svg">
-                        Proporciona efeito liso natural sem química agressiva
-                    </li>
+                    <li><img src="novo/img/check.svg"> Proporciona efeito liso natural sem química agressiva</li>
                     <li><hr></li>
 
-                    <li><img src="novo/img/check.svg">
-                        Reduz volume e deixa o cabelo mais disciplinado
-                    </li>
+                    <li><img src="novo/img/check.svg"> Reduz volume e deixa o cabelo mais disciplinado</li>
                     <li><hr></li>
 
-                    <li><img src="novo/img/check.svg">
-                        Nutre profundamente e protege contra danos
-                    </li>
+                    <li><img src="novo/img/check.svg"> Nutre profundamente e protege contra danos</li>
                     <li><hr></li>
 
-                    <li><img src="novo/img/check.svg">
-                        Combate pontas duplas e ressecamento
-                    </li>
+                    <li><img src="novo/img/check.svg"> Combate pontas duplas e ressecamento</li>
                     <li><hr></li>
 
-                    <li><img src="novo/img/check.svg">
-                        Deixa o cabelo mais brilhoso, sedoso e fácil de escovar
-                    </li>
+                    <li><img src="novo/img/check.svg"> Deixa o cabelo mais brilhoso, sedoso e fácil de escovar</li>
                 </ul>
 
                 <div style="width:100%">
@@ -278,12 +265,9 @@
 
             <div class="col-md-4" data-entrance="from-left" data-entrance-delay="100">
                 <div class="list-amostra">
-                    <img src="novo/img/pill.png" class="img-fluid pill p3 show-desktop" 
-                         data-entrance="from-bottom" data-entrance-delay="100">
-                    <img src="novo/img/frasco.png" class="img-fluid frasco show-desktop" 
-                         data-entrance="from-bottom" data-entrance-delay="100">
-                    <img src="novo/img/pill.png" class="img-fluid pill p4 show-desktop" 
-                         data-entrance="from-bottom" data-entrance-delay="100">
+                    <img src="novo/img/pill.png" class="img-fluid pill p3 show-desktop" data-entrance="from-bottom" data-entrance-delay="100">
+                    <img src="novo/img/frasco.png" class="img-fluid frasco show-desktop" data-entrance="from-bottom" data-entrance-delay="100">
+                    <img src="novo/img/pill.png" class="img-fluid pill p4 show-desktop" data-entrance="from-bottom" data-entrance-delay="100">
                 </div>
             </div>
         </div>
@@ -293,7 +277,81 @@
         <div class="wave"></div>
         <div class="wave"></div>
     </div>
+
 </section>
+
+<style>
+/* Base desktop */
+.bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.05);
+    z-index: -1;
+}
+
+.container { position: relative; z-index: 1; }
+
+/* MOBILE */
+@media (max-width: 768px) {
+    #home { min-height: 100vh; background: #000; }
+
+    .bg-img {
+        width: 100vw !important;
+        height: 90vh !important; /* mantém como estava */
+        object-fit: cover;
+        object-position: top center;
+        transform: none;
+        left: 0;
+    }
+
+    html, body { width: 100vw; overflow-x: hidden; }
+
+    .headline {
+        margin: 0;
+        padding: 14px 12px;
+        color: #fff;
+        font-weight: 700;
+        position: relative;
+        top: 0px;
+        z-index: 2;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    /* DESCER A SEGUNDA FRASE */
+    .hero-list {
+        margin-top: 80px !important; /* antes 40px */
+        padding: 0 12px 30px 12px;
+        z-index: 2;
+        position: relative;
+    }
+
+    /* REMOVER FRASCOS NO MOBILE */
+    .show-mobile.frasco,
+    .frasco.show-mobile,
+    .pill.show-mobile {
+        display: none !important;
+    }
+
+    .ocean.dark { display: none !important; }
+
+    #home::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 70vh;
+        width: 100%;
+        height: calc(100vh - 70vh);
+        background: #000;
+        z-index: 0;
+    }
+}
+</style>
+
 
 
     <!-- / Home --><!-- Depoimentos -->
