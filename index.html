@@ -329,6 +329,11 @@
         position: relative;
     }
 
+    /* BOTÃO MAIS PRA CIMA */
+    .product-btn {
+        margin-bottom: 40px !important;
+    }
+
     /* REMOVE FRASCOS E PÍLULAS NO MOBILE */
     .show-mobile.frasco,
     .frasco.show-mobile,
@@ -338,14 +343,21 @@
         display: none !important;
     }
 
-    .ocean.dark { display: none !important; }
+    /* ONDAS NO FINAL DO PRETO */
+    .ocean.dark {
+        display: block !important;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
 
-    /* AQUI ABAIXEI MAIS O FUNDO PRETO */
     #home::after {
         content: "";
         position: absolute;
         left: 0;
-        top: 85vh; /* antes 70vh — agora DESCE MAIS O FUNDO PRETO */
+        top: 85vh;
         width: 100%;
         height: calc(100vh - 85vh);
         background: #000;
@@ -353,6 +365,7 @@
     }
 }
 </style>
+
 
     <!-- / Home --><!-- Depoimentos -->
 
