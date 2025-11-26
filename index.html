@@ -213,7 +213,8 @@
 
 
     <!-- Home -->
-<section id="home" class="background-dark-blue-3 full-height height-auto-lg hide-over" style="position: relative; overflow: hidden; background: #000;">
+<section id="home" class="background-dark-blue-3 full-height height-auto-lg hide-over" style="position: relative; overflow: visible;
+ background: #000;">
 
     <!-- Imagem de fundo como tag img -->
     <img src="novo/img/background-thiago-finch.png"
@@ -294,22 +295,35 @@
     z-index: -1;
 }
 
-.container { position: relative; z-index: 1; }
+.container { 
+    position: relative; 
+    z-index: 1; 
+}
 
 /* MOBILE */
 @media (max-width: 768px) {
-    #home { min-height: 100vh; background: #000; }
+
+    #home { 
+        min-height: 100vh; 
+        background: #000; 
+        position: relative;
+        overflow: visible !important;
+    }
 
     .bg-img {
         width: 100vw !important;
-        height: 90vh !important;
+        height: auto;
+        min-height: 90vh;
         object-fit: cover;
         object-position: top center;
         transform: none;
         left: 0;
     }
 
-    html, body { width: 100vw; overflow-x: hidden; }
+    html, body { 
+        width: 100vw; 
+        overflow-x: hidden; 
+    }
 
     .headline {
         margin: 0;
@@ -350,18 +364,13 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        z-index: 10;
+        z-index: 1 !important; /* reduzido para não tampar conteúdo */
+        pointer-events: none;  /* impede bloquear o toque/scroll */
     }
 
-    #home::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 85vh;
-        width: 100%;
-        height: calc(100vh - 85vh);
-        background: #000;
-        z-index: 0;
+    /* REMOVE O BLOCO QUE TAMPAVA O SITE */
+    #home::after { 
+        content: none !important; 
     }
 }
 </style>
